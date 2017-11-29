@@ -1,21 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Formularz logowania</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+<section id="login" style="margin-top: 75px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Formularz logowania</h4>
+                    </div>
+                    <div class="card-block">
+                        <form method="POST" action="{{ route('login') }}">
+                            {{ csrf_field() }}
+                            <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="form-control-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -23,13 +22,9 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Hasło</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                            <div class="form-group">
+                                <label for="password" class="form-control-label">Hasło</label>
+                                <input type="password" id="password" class="form-control"  name="password" value="{{ old('password') }}" required autofocus>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -37,19 +32,12 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Zaloguj
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                            <button class="btn btn-primary btn-block mb-3">Zaloguj</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
