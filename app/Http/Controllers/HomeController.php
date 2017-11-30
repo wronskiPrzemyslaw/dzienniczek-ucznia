@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Role;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $role = Role::find(auth()->user()->role_id);
+
+        if ($role->name === 'admin') {
+            $teachers = User::where('role_id', '=', Role::where('name', '=', Role::ROLE_TEACHER)->first()->id)->get();
+            return view('home', compact('teachers'));
+        }
+
+        return view('teacher-home');
     }
 }

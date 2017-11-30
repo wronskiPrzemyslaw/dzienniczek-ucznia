@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1><i class="fa fa-gear"></i> Panel</h1>
+                    <h1><i class="fa fa-gear"></i> Panel Admina</h1>
                 </div>
             </div>
         </div>
@@ -37,28 +37,20 @@
                                 <th>#</th>
                                 <th>Imię</th>
                                 <th>Nazwisko</th>
+                                <th>Email</th>
                                 <th>Dodany</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td scope="row">1</td>
-                                <td>Donald</td>
-                                <td>Tusk</td>
-                                <td>July 11, 2017</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">2</td>
-                                <td>Jarosław</td>
-                                <td>Kaczyński</td>
-                                <td>July 12, 2017</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">3</td>
-                                <td>Antoni</td>
-                                <td>Macierewicz</td>
-                                <td>July 12, 2017</td>
-                            </tr>
+                            @foreach($teachers as $index => $teacher)
+                                <tr>
+                                    <td scope="row">{{ ++$index }}</td>
+                                    <td>{{ $teacher->firstName }}</td>
+                                    <td>{{ $teacher->lastName }}</td>
+                                    <td>{{ $teacher->email }}</td>
+                                    <td>{{ $teacher->created_at }}</td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -88,21 +80,30 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form method="post" action="{{ route('add-teacher') }}">
+                        {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="title" class="form-control-label">Imię</label>
-                            <input type="text" class="form-control">
+                            <label for="firstName" class="form-control-label">Imię</label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="category" class="form-control-label">Nazwisko</label>
-                            <input type="text" class="form-control">
+                            <label for="lastName" class="form-control-label">Nazwisko</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" required>
                         </div>
+                        <div class="form-group">
+                            <label for="password" class="form-control-label">Hasło</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-control-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+
+                        <button class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="submit" class="btn btn-primary">Dodaj</button>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                    <button class="btn btn-primary" data-dismiss="modal">Dodaj</button>
-                </div>
+                <div class="modal-footer"></div>
             </div>
         </div>
     </div>

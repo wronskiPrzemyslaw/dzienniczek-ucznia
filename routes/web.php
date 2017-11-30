@@ -14,5 +14,6 @@
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('add-teacher', 'TeacherController@add')->name('add-teacher');
 
 Route::get('/', 'HomeController@index')->name('home');
