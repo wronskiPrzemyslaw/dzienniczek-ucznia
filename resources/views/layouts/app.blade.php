@@ -14,6 +14,16 @@
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <style>
+        .content {
+            background-image: url(/img/dzienniczek.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding-top: 100px;
+            padding-bottom: 300px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

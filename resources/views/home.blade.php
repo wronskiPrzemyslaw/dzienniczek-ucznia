@@ -12,7 +12,7 @@
     </header>
 
     <!-- ACTIONS -->
-    <section id="actions" class="py-4 mb-4 bg-faded">
+    <section id="actions" class="py-4 bg-faded">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -23,7 +23,7 @@
     </section>
 
     <!-- POSTS -->
-    <section id="posts">
+    <section id="posts" class="content">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
@@ -58,7 +58,7 @@
         </div>
     </section>
 
-    <footer id="main-footer" class="bg-inverse text-white mt-5 p-5">
+    <footer id="main-footer" class="bg-inverse text-white p-5">
         <div class="container">
             <div class="row">
                 <div class="col">

@@ -11,11 +11,13 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1 style="margin-top: 250px; margin-bottom: 250px;">Work in progress ...</h1>
-    </div>
+    <section id="posts" class="content" style="padding-top: 300px; color: white;">
+        <div class="container">
+            <h1>Work in progress ...</h1>
+        </div>
+    </section>
 
-    <footer id="main-footer" class="bg-inverse text-white mt-5 p-5">
+    <footer id="main-footer" class="bg-inverse text-white p-5">
         <div class="container">
             <div class="row">
                 <div class="col">
