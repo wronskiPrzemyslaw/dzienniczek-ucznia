@@ -62,7 +62,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p class="lead text-center">Copyright &copy; 2017 Przemysław Wroński, Paweł Antoniak, Dobromir Kabuła</p>
+                    <p class="lead text-center">Copyright &copy; 2017 Przemysław Wroński, Paweł Antoniak, Dobromir Kabuła, Mateusz Jóskowski</p>
                 </div>
             </div>
         </div>
